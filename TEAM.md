@@ -108,15 +108,27 @@ Báo cáo đầy đủ: [report/team/2A202603831_VuVanBinh.md](report/team/2A202
 ## 2A202603940_LeHienHieu
 
 ### Phần việc phụ trách
-
--
-
+- Phụ trách thiết kế và lập trình kiến trúc Shape A — Deterministic Workflow trong [file](../../src/lab8/shapes/workflow.py).
+- Đảm bảo luồng xử lý đền bù hoàn toàn bằng code (hard-coded logic) để loại bỏ rủi ro ảo giác từ LLM.
+- Xử lý cơ chế tiêm lỗi (Crash Injection) để vượt qua bài kiểm tra độ bền hệ thống.
 ### Đóng góp cụ thể
-
--
-
+- Commit chính: `02659b9`
+- Hoàn thành Checkpoint 2 (CP2): Xây dựng luồng thực thi 8 bước tuần tự cho workflow. Đã cấu hình để hệ thống tự động bóc tách thông tin từ get_claim_view, xác thực bằng lookup_order, tính toán số tiền đền bù bằng hàm compute_compensation thay vì dùng AI.
+- Hoàn thành Checkpoint 3 (CP3): Xử lý cơ chế Crash Injection. Đảm bảo hệ thống vẫn ghi nhận dấu vết (trace log) hợp lệ ngay cả khi tiến trình bị đánh sập ngay trước/sau khi gọi issue_refund.
+- Quyết định kỹ thuật:
+    - Áp dụng nguyên tắc "Draft then Commit": Đặt hàm gọi LLM API `complete()` ngay sau khi tính toán xong proposal và trước khi gọi lệnh ghi cơ sở dữ liệu issue_refund. Việc này giúp tối ưu hóa code (tránh lặp ở các nhánh điều kiện) và đảm bảo an toàn giao dịch nếu API của LLM bị gián đoạn.
+    - Quản lý chặt chẽ ngân sách (Budget) bằng cách gọi thủ công budget.add_tool(tool_cost()) trước mỗi công cụ đọc (read tools).
 ### Bằng chứng
-
--
+- Vượt qua 100% kiểm thử Benchmark: Báo cáo tại [benchmark_workflow](../../src/reports/benchmark_workflow.json) (chạy trên các public claims) cho thấy:
+    - pass_rate: 1.0 (70/70 lượt chạy thành công).
+    - seed_variance: 0.0 (Không dao động kết quả dù chạy với seed 11, 22, 33, 44 hay 55).
+    - mean_model_calls: Đúng 1.0 lần gọi model cho mỗi kịch bản.
+- Vượt qua 100% kiểm định độ bền: Báo cáo tại [benchmark_workflow_crash](../../src/reports/benchmark_workflow_crash.json) ghi nhận crash_safety: 20/20 (vượt qua tất cả các kịch bản đứt gãy giao dịch).
+- Ngoài ra code đã pass các bài pytest của CP1+CP2 và CP3:
+```(python)
+python -m pytest -q -m student -o addopts= -k workflow
+..............................................................
+62 passed, 240 deselected in 4.83s
+```
 
 
