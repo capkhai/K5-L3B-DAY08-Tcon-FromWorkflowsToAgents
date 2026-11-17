@@ -3,7 +3,7 @@
 ## Thông tin nhóm
 
 - Tên nhóm:
-- Lớp: L3A
+- Lớp: L3B
 - Repo nhóm: `K5-L3A-DAY08-TenNhom-FromWorkflowsToAgents` (xem [SUBMISSION.md](SUBMISSION.md))
 - URL repo, nhánh nộp, commit chốt:
 
@@ -13,6 +13,7 @@
 | --: | ------ | ---- | ----- | ------ | ------- |
 |   1 | Vũ Văn Trường | 2A202603910 | tini.vu.0@gmail.com | Sz3RO | Shape C (orchestrator + handoff) |
 |   2 | Vũ Văn Bình | 2A202603831 | binhvuvan2004@gmail.com | hnib1908 | Shape D (swarm: kiểm thử, benchmark và phân tích lỗi) |
+|   3 | Lê Hiền Hiếu | 2A202603940 | hieulh.work@gmail.com | hieulhaiwork | Shape A (deterministic workflow) |
 
 Gợi ý chia vai:
 
@@ -27,6 +28,7 @@ Gợi ý chia vai:
 | --- | --- | --- | --- |
 | Vũ Văn Trường | Shape C (orchestrator + handoff) | `51b0383`: cài `orchestrator.py` và thêm lưới an toàn exception | `src/tests/test_orchestrator_shape.py` (17 test: unknown claim, handoff/trace sạch secret, injection 5 seed, trần theo đơn, 3 điểm crash, needs_info, denied, replay, lưới an toàn) |
 | Vũ Văn Bình | D — swarm: test có sẵn 62 passed; benchmark 69/70 trial; phân tích T02 seed 55; tổng hợp báo cáo | `1c61baa`: thêm test trace và báo cáo đánh giá swarm | `src/tests/test_swarm_delay_evidence.py::test_swarm_t02_trace_explains_seed_dependent_delay_override` (AI hỗ trợ; 1 passed) |
+| Lê Hiền Hiếu | Shape A (workflow) | `02659b9`: Hoàn thiện `workflow.py` xử lý 8 bước deterministic, tích hợp tool_cost và fix lỗi nuốt InjectedCrash; pass test các testcases yêu cầu | `src/tests/test_public_matrix.py::test_t12_crash_before_checkpoint_does_not_double_pay[workflow]` (Đã fix khối try/except thành try/finally để pass test kiểm định crash, 62/62 passed) |
 
 ## Cá nhân
 
@@ -100,3 +102,19 @@ Báo cáo đầy đủ: [report/team/2A202603831_VuVanBinh.md](report/team/2A202
 - Test: `src/tests/test_swarm_delay_evidence.py`; kết quả riêng: 1 passed.
 - Benchmark: `src/reports/swarm_benchmark.json`; đạt 69/70 trial, pass rate 98,57%, pass^5 92,86%, variance 0,0008163265, cost/success 49,57 VND mô phỏng, mean/p95 steps 2,80/3,00.
 - Run ID đối chiếu: `R-swarm-C-002-s11` và `R-swarm-C-002-s55`. Trace chỉ dùng cục bộ, không commit.
+
+## 2A202603940_LeHienHieu
+
+### Phần việc phụ trách
+
+-
+
+### Đóng góp cụ thể
+
+-
+
+### Bằng chứng
+
+-
+
+
