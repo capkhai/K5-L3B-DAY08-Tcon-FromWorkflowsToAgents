@@ -12,8 +12,6 @@
 - Đảm bảo luồng xử lý đền bù hoàn toàn bằng code (hard-coded logic) để loại bỏ rủi ro ảo giác từ LLM.
 - Xử lý cơ chế tiêm lỗi (Crash Injection) để vượt qua bài kiểm tra độ bền hệ thống.
 
-...
-
 ## 3. Đóng góp cụ thể
 - Commit chính: `02659b9`
 - Hoàn thành Checkpoint 2 (CP2): Xây dựng luồng thực thi 8 bước tuần tự cho workflow. Đã cấu hình để hệ thống tự động bóc tách thông tin từ get_claim_view, xác thực bằng lookup_order, tính toán số tiền đền bù bằng hàm compute_compensation thay vì dùng AI.
@@ -31,7 +29,7 @@
 - Ngoài ra code đã pass các bài pytest của CP1+CP2 và CP3:
 ```(python)
 python -m pytest -q -m student -o addopts= -k workflow
-..............................................................                                                                                  [100%]
+..............................................................
 62 passed, 240 deselected in 4.83s
 ```
 và
