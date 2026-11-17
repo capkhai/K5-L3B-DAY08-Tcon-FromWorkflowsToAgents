@@ -30,7 +30,7 @@ Gợi ý chia vai:
 
 ## Cá nhân
 
-Phần D đã có bản báo cáo tại `report/team/2A202603831-VuVanBinh.md`; cần điền thông tin và đổi tên theo `MSSV_HoTen.md`. Bằng chứng hiện có: `src/reports/swarm_benchmark.json`, run ID `R-swarm-C-002-s55` (sai) và `R-swarm-C-002-s11` (đúng). Đã thêm test đối chiếu trace với hỗ trợ AI, commit kỹ thuật `1c61baa`; cần tự đọc hiểu test trước khi nộp.
+Phần D đã có bản báo cáo tại `report/team/2A202603831_VuVanBinh.md`. Bằng chứng hiện có: `src/reports/swarm_benchmark.json`, run ID `R-swarm-C-002-s55` (sai) và `R-swarm-C-002-s11` (đúng). Đã thêm test đối chiếu trace với hỗ trợ AI, commit kỹ thuật `1c61baa`; cần tự đọc hiểu test trước khi nộp.
 
 Mỗi thành viên đồng thời tạo một báo cáo riêng trong `report/` theo dạng:
 
