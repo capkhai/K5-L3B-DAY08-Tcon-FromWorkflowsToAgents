@@ -4,7 +4,7 @@
 `Shape chọn` phải là đúng một trong: `workflow`, `single`, `orchestrator`, `swarm`. Đây là shape được chấm cổng hidden.
 
 - Shape chọn: workflow
-- Commit hash: c1bbc3b
+- Commit hash: d1e745d
 - Run id dẫn chứng: R-workflow-C-001-s11; đối chiếu R-swarm-C-002-s55; src/reports/benchmark.json
 - Pass rate / pass^5 / seed min-max / variance: 1,000 / 1,000 / 1,000–1,000 / 0 (70/70 trial public)
 - Cost per success (mô phỏng, VND): 28,79
@@ -17,7 +17,7 @@ Ví dụ một dòng đã điền: `- Shape chọn: workflow`, `- Crash safety: 
 
 Đề xuất workflow vì task có luật nghiệp vụ và luồng đọc–tính–ghi rõ ràng. Trên cùng 14 claim và seed 11,22,33,44,55, workflow, single và orchestrator đều đạt 70/70 trial. Workflow có mức tự chủ thấp nhất, cost/success 28,79 so với 29,94 của single và 57,25 của orchestrator. Swarm có 69/70 trial và cost/success 49,57. Số liệu lấy từ file benchmark do công cụ sinh.
 
-Bản code và bằng chứng đánh giá được chốt tại commit `c1bbc3b`, bao gồm bản sửa workflow để crash truyền ra đúng contract.
+Bản code và bằng chứng đánh giá được chốt tại commit `d1e745d`, bao gồm bản sửa workflow để crash truyền ra đúng contract.
 
 ## Có đáng đổi lấy multi-agent không
 
