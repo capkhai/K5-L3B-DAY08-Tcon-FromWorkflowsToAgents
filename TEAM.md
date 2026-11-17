@@ -83,6 +83,8 @@ Báo cáo đầy đủ: [report/team/2A202603910_VuVanTruong.md](report/team/2A2
 
 ## 2A202603831_VuVanBinh
 
+Bổ sung tích hợp (AI hỗ trợ, chưa có hash commit mới): kiểm thử A/B/C/D, sửa workflow nuốt crash (`except` → `finally`), benchmark chung, crash suite, thí nghiệm R2 và test `src/tests/test_research_r2.py`. Kết quả: 73 test mặc định và 248 test student đạt; crash safety 20/20. Cần bổ sung hash tích hợp sau khi commit; `1c61baa` bên dưới vẫn là commit kỹ thuật phần D ban đầu.
+
 Báo cáo đầy đủ: [report/team/2A202603831_VuVanBinh.md](report/team/2A202603831_VuVanBinh.md)
 
 ### Phần việc phụ trách

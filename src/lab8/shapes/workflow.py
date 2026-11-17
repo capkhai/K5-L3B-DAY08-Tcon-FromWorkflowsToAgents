@@ -49,7 +49,7 @@ def run_claim(
     conn = connect(store_path)
     try:
         return _run(conn, claim_id, seed=seed, crash_at=crash_at)
-    except:
+    finally:
         conn.close()
 
 def _run(
