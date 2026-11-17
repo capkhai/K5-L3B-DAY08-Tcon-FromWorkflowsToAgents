@@ -26,8 +26,11 @@ Gợi ý chia vai:
 | Người | Vai | Commit | Test đã thêm hoặc sửa |
 | --- | --- | --- | --- |
 | Vũ Văn Trường | Shape C (orchestrator + handoff) | `51b0383`: cài `orchestrator.py` và thêm lưới an toàn exception | `src/tests/test_orchestrator_shape.py` (17 test: unknown claim, handoff/trace sạch secret, injection 5 seed, trần theo đơn, 3 điểm crash, needs_info, denied, replay, lưới an toàn) |
+| Thành viên D (chưa điền họ tên/MSSV) | D — swarm: test có sẵn 62 passed; benchmark 69/70 trial; phân tích T02 seed 55; tổng hợp báo cáo | Chưa commit | `src/tests/test_swarm_delay_evidence.py::test_swarm_t02_trace_explains_seed_dependent_delay_override` (AI hỗ trợ; 1 passed) |
 
 ## Cá nhân
+
+Phần D đã có bản báo cáo tại `report/team/2A202603831-VuVanBinh.md`; cần điền thông tin và đổi tên theo `MSSV_HoTen.md`. Bằng chứng hiện có: `src/reports/swarm_benchmark.json`, run ID `R-swarm-C-002-s55` (sai) và `R-swarm-C-002-s11` (đúng). Đã thêm test đối chiếu trace; cần tự đọc hiểu test và bổ sung commit kỹ thuật của thành viên D.
 
 Mỗi thành viên đồng thời tạo một báo cáo riêng trong `report/` theo dạng:
 
