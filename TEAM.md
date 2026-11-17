@@ -107,6 +107,8 @@ Báo cáo đầy đủ: [report/team/2A202603831_VuVanBinh.md](report/team/2A202
 
 ## 2A202603940_LeHienHieu
 
+Báo cáo đầy đủ: [2A202603940_LeHienHieu.md](report/team/2A202603940_LeHienHieu.md)
+
 ### Phần việc phụ trách
 - Phụ trách thiết kế và lập trình kiến trúc Shape A — Deterministic Workflow trong [file](../../src/lab8/shapes/workflow.py).
 - Đảm bảo luồng xử lý đền bù hoàn toàn bằng code (hard-coded logic) để loại bỏ rủi ro ảo giác từ LLM.
