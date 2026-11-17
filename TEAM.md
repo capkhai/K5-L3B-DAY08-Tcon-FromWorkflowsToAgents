@@ -5,7 +5,7 @@
 - Tên nhóm:
 - Lớp: L3B
 - Repo nhóm: `K5-L3A-DAY08-TenNhom-FromWorkflowsToAgents` (xem [SUBMISSION.md](SUBMISSION.md))
-- URL repo, nhánh nộp, commit chốt:
+- URL repo, nhánh nộp, commit chốt: https://github.com/capkhai/K5-L3B-DAY08-Tcon-FromWorkflowsToAgents ; `main` ; `c1bbc3b`
 
 ## Thành viên
 
@@ -83,7 +83,7 @@ Báo cáo đầy đủ: [report/team/2A202603910_VuVanTruong.md](report/team/2A2
 
 ## 2A202603831_VuVanBinh
 
-Bổ sung tích hợp (AI hỗ trợ, chưa có hash commit mới): kiểm thử A/B/C/D, sửa workflow nuốt crash (`except` → `finally`), benchmark chung, crash suite, thí nghiệm R2 và test `src/tests/test_research_r2.py`. Kết quả: 73 test mặc định và 248 test student đạt; crash safety 20/20. Cần bổ sung hash tích hợp sau khi commit; `1c61baa` bên dưới vẫn là commit kỹ thuật phần D ban đầu.
+Bổ sung tích hợp (AI hỗ trợ, commit `c1bbc3b`): kiểm thử A/B/C/D, sửa workflow nuốt crash (`except` → `finally`), benchmark chung, crash suite, thí nghiệm R2 và test `src/tests/test_research_r2.py`. Kết quả: 73 test mặc định và 248 test student đạt; crash safety 20/20. Hash bản tích hợp là `c1bbc3b`; `1c61baa` bên dưới vẫn là commit kỹ thuật phần D ban đầu.
 
 Báo cáo đầy đủ: [report/team/2A202603831_VuVanBinh.md](report/team/2A202603831_VuVanBinh.md)
 
