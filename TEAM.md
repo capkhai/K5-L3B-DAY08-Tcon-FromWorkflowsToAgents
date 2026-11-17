@@ -12,7 +12,7 @@
 | STT | Họ tên | MSSV | Email | GitHub | Vai trò |
 | --: | ------ | ---- | ----- | ------ | ------- |
 |   1 | Vũ Văn Trường | 2A202603910 | tini.vu.0@gmail.com | Sz3RO | Shape C (orchestrator + handoff) |
-|   2 |        |      |       |        |         |
+|   2 | Vũ Văn Bình | 2A202603831 | binhvuvan2004@gmail.com | hnib1908 | Shape D (swarm: kiểm thử, benchmark và phân tích lỗi) |
 
 Gợi ý chia vai:
 
@@ -26,11 +26,11 @@ Gợi ý chia vai:
 | Người | Vai | Commit | Test đã thêm hoặc sửa |
 | --- | --- | --- | --- |
 | Vũ Văn Trường | Shape C (orchestrator + handoff) | `51b0383`: cài `orchestrator.py` và thêm lưới an toàn exception | `src/tests/test_orchestrator_shape.py` (17 test: unknown claim, handoff/trace sạch secret, injection 5 seed, trần theo đơn, 3 điểm crash, needs_info, denied, replay, lưới an toàn) |
-| Thành viên D (chưa điền họ tên/MSSV) | D — swarm: test có sẵn 62 passed; benchmark 69/70 trial; phân tích T02 seed 55; tổng hợp báo cáo | Chưa commit | `src/tests/test_swarm_delay_evidence.py::test_swarm_t02_trace_explains_seed_dependent_delay_override` (AI hỗ trợ; 1 passed) |
+| Vũ Văn Bình | D — swarm: test có sẵn 62 passed; benchmark 69/70 trial; phân tích T02 seed 55; tổng hợp báo cáo | `1c61baa`: thêm test trace và báo cáo đánh giá swarm | `src/tests/test_swarm_delay_evidence.py::test_swarm_t02_trace_explains_seed_dependent_delay_override` (AI hỗ trợ; 1 passed) |
 
 ## Cá nhân
 
-Phần D đã có bản báo cáo tại `report/team/2A202603831-VuVanBinh.md`; cần điền thông tin và đổi tên theo `MSSV_HoTen.md`. Bằng chứng hiện có: `src/reports/swarm_benchmark.json`, run ID `R-swarm-C-002-s55` (sai) và `R-swarm-C-002-s11` (đúng). Đã thêm test đối chiếu trace; cần tự đọc hiểu test và bổ sung commit kỹ thuật của thành viên D.
+Phần D đã có bản báo cáo tại `report/team/2A202603831-VuVanBinh.md`; cần điền thông tin và đổi tên theo `MSSV_HoTen.md`. Bằng chứng hiện có: `src/reports/swarm_benchmark.json`, run ID `R-swarm-C-002-s55` (sai) và `R-swarm-C-002-s11` (đúng). Đã thêm test đối chiếu trace với hỗ trợ AI, commit kỹ thuật `1c61baa`; cần tự đọc hiểu test trước khi nộp.
 
 Mỗi thành viên đồng thời tạo một báo cáo riêng trong `report/` theo dạng:
 
@@ -78,3 +78,25 @@ Báo cáo đầy đủ: [report/team/2A202603910_VuVanTruong.md](report/team/2A2
 - Benchmark public (orchestrator, 5 seed): pass rate 1.000, pass^5 1.000, variance 0, cost/success 57.25 VND mô phỏng, 4.71 bước. Chưa chạy bộ hidden.
 - Crash suite của host `crash_safety 20/20` (suite này không chạy qua Shape C; bằng chứng crash của Shape C là T12 và 3 test crash trên C-012).
 - Commit: `51b0383`.
+
+## 2A202603831_VuVanBinh
+
+Báo cáo đầy đủ: [report/team/2A202603831_VuVanBinh.md](report/team/2A202603831_VuVanBinh.md)
+
+### Phần việc phụ trách
+
+- Shape D — swarm tham chiếu: đọc code, chạy kiểm thử và benchmark; đối chiếu trace để giải thích lỗi T02 ở seed 55.
+
+### Đóng góp cụ thể
+
+- Chạy bộ test student riêng swarm: 62 passed.
+- Chạy benchmark 14 claim public với seed 11, 22, 33, 44, 55; tổng hợp kết quả vào báo cáo nhóm.
+- Phân tích C-002: seed 55 ghi đè dữ liệu order từ 2 thành 5 ngày theo ticket, dẫn tới quyết định sai.
+- Thêm test `test_swarm_t02_trace_explains_seed_dependent_delay_override` với hỗ trợ AI; đối chiếu trace, quote, trạng thái và xác nhận dữ liệu order gốc vẫn giữ nguyên.
+
+### Bằng chứng
+
+- Commit kỹ thuật: `1c61baa`.
+- Test: `src/tests/test_swarm_delay_evidence.py`; kết quả riêng: 1 passed.
+- Benchmark: `src/reports/swarm_benchmark.json`; đạt 69/70 trial, pass rate 98,57%, pass^5 92,86%, variance 0,0008163265, cost/success 49,57 VND mô phỏng, mean/p95 steps 2,80/3,00.
+- Run ID đối chiếu: `R-swarm-C-002-s11` và `R-swarm-C-002-s55`. Trace chỉ dùng cục bộ, không commit.
